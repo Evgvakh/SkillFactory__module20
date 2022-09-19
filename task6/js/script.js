@@ -6,10 +6,6 @@ const button = document.querySelector('button');
 
 const divMain = document.querySelector('.main-container');
 
-window.onload = function() {
-    
-};
-
 
 button.addEventListener('click', async () => {
     let pageInputValue = pageInput.value;
@@ -19,8 +15,6 @@ button.addEventListener('click', async () => {
     let link = `https://picsum.photos/v2/list?page=${pageInputValue}&limit=${limitInputValue}`; 
     
     const storageItem = localStorage.getItem('img0');
-
-    const storageLength = localStorage.length;
 
     if (storageItem) {
         divMain.innerHTML = '';
@@ -50,7 +44,6 @@ button.addEventListener('click', async () => {
             images.push(arr[i].url);            
         }
     }
-
     getImage(userRequestResult);
 
     for (let i in images) {
